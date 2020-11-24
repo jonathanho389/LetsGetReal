@@ -7,7 +7,11 @@ public class RationalNumber extends RealNumber{
     denominator = deno;
     if(denominator == 0){
       numerator = 0;
-      denominator = numerator;
+      denominator = 1;
+    }
+    if(denominator < 0){
+      numerator *= -1;
+      denominator *= -1;
     }
   }
 
@@ -21,5 +25,10 @@ public class RationalNumber extends RealNumber{
 
   public int getDenominator(){
     return denominator;
+  }
+
+  public RationalNumber reciprocal(){
+    RationalNumber num = new RationalNumber(denominator, numerator);
+    return num;
   }
 }
