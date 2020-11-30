@@ -1,4 +1,4 @@
-public class RationalNumber extends RealNumber{
+public class RationalNumber extends Number{
   private int numerator, denominator;
 
   private static int gcd(int a, int b){
@@ -26,7 +26,6 @@ public class RationalNumber extends RealNumber{
   }
 
   public RationalNumber(int nume, int deno){
-    super(0.0);
     if(deno == 0){
       numerator = 0;
       denominator = 1;
@@ -71,6 +70,12 @@ public class RationalNumber extends RealNumber{
   }
 
   public String toString(){
+    if(denominator == 1){
+      return "" + numerator;
+    }
+    else if(numerator == 0){
+      return "0";
+    }
     return numerator + "/" + denominator;
   }
 
